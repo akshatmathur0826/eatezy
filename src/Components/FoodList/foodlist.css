@@ -1,0 +1,53 @@
+
+.popup {
+position: fixed;
+background: rgba(0, 0, 0, 0.2);
+width: 100%;
+top: 0;
+height: 100vh;
+z-index: 9999;
+left: 0;
+display: flex;
+justify-content:center;
+}
+
+.popup-inner {
+position: fixed;
+padding: 32px;
+height: 100%;
+width: 50%;
+background-color:#FAF9F6;
+/* rgba(245, 245, 220); */
+overflow-x: scroll;
+}
+.popup-inner .title{
+    position: absolute;
+    top: -10%;
+    left: -8%;
+    width: 100%;
+}
+.popup-inner .close-btn{
+    position: absolute;
+    cursor: pointer;
+    left: 90%;
+    top: 3%;
+}
+
+/* foodlist.css */
+
+/* Style for the container of each food item */
+.food-item-container {
+    display: flex; /* Display items side by side */
+    justify-content: space-between; /* Space between data and counter */
+    align-items: center; /* Vertically center items */
+    margin-bottom: 10px; /* Add some spacing between food items */
+  }
+  
+  /* Style for the food item details */
+  .food-item-details {
+    flex: 1; /* Allow item details to grow and fill the available space */
+  }
+  
+  /* Style for the counter component (assuming you have a separate Counter.css) */
+  /* You can customize the Counter component's style in its own CSS file */
+  

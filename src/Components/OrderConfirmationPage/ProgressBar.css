@@ -1,0 +1,32 @@
+/* ProgressBar.css */
+
+.progress-bar {
+    width: 100%;
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    position: relative;
+  }
+  
+  .status-indicator {
+    width: 33.33%; /* Adjust based on the number of statuses */
+    height: 100%;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    transition: width 0.3s;
+  }
+  
+  .accepted {
+    background-color: #6ac045; /* Green color for Accepted status */
+  }
+  
+  .inprogress {
+    background-color: #ffa500; /* Orange color for In Progress status */
+  }
+  
+  .ready {
+    background-color: #ff0000; /* Red color for Ready status */
+  }
+  

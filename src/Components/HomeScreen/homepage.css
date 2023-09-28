@@ -1,0 +1,132 @@
+/* Base styles for larger screens */
+body{
+    max-width:fit-content;
+}
+.mall {
+    outline: none;
+    border: none;
+    width: 80%;
+    padding-left: 0px;
+    font-size: 15px;
+}
+
+.location {
+    outline: none;
+    border: none;
+    width: 30%;
+    padding-left: 0px;
+    font-size: 15px;
+}
+
+h1 {
+    margin: 12%;
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+.locationIcon {
+    font-size: 20px;
+    color: rgb(252, 119, 119);
+    padding: 0 10px 0 10px;
+    margin-left: 1%;
+}
+
+.searchIcon {
+    color: gray;
+    padding-left: 10px;
+    margin-left: -10%;
+    margin-right: 2%;
+}
+
+.sec-1 {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    position: relative;
+    width: 20%;
+    margin: 0.5% 4% 0% 1.5%;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 1px 2px gray;
+    background-color: rgb(243, 240, 240);
+    cursor: pointer;
+}
+
+.box img {
+    width: 100%;
+    border-radius: 15px;
+    z-index: -1;
+}
+
+.white {
+    position: absolute;
+    bottom: 3px;
+    align-items: center;
+    border-radius: 0 0 15px 15px;
+    background-color: white;
+    width: 100%;
+    height: 25%;
+}
+
+.white span {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    color: rgb(56, 56, 56);
+    letter-spacing: 0.7px;
+}
+
+.sectionHeader {
+    /* padding: 0% 10% 10% 10%; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: xx-large;
+    font-weight: lighter;
+    
+}
+body{
+    overflow-x: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Add responsive styles for mobile screens */
+@media (max-width: 768px) {
+    .header {
+        height: 50vh;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-bar {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .search {
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+    }
+
+    .mall {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .location {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: large;
+    }
+}
