@@ -14,7 +14,7 @@ export const getAllDetails = async(mall,location)=>{
 
 export const getRestoDetails = async(mallid)=>{
   console.log(mallid)
-  const response = await axios.get("http://localhost:8080/getMallid",{
+  const response = await axios.get("https://eatezy.onrender.com/getMallid",{
     params:{mallid:mallid}
   })
   let data = response.data
@@ -24,7 +24,7 @@ export const getRestoDetails = async(mallid)=>{
 
 export const getImage = async(mallid)=>{
   console.log(mallid)
-  const response = await axios.get(`http://localhost:8080/getMallimage`,{
+  const response = await axios.get(`https://eatezy.onrender.com/getMallimage`,{
     params:{mallid:mallid}
   })
 
@@ -49,7 +49,7 @@ export const getImage = async(mallid)=>{
 
 export const getRestarurantDetails = async(mallid)=>{
   console.log(mallid)
-  const response = await axios.get("http://localhost:8080/restaurantdetails",{
+  const response = await axios.get("https://eatezy.onrender.com/restaurantdetails",{
     params:{mallid:mallid}
   })
   let data = response.data
@@ -58,7 +58,7 @@ export const getRestarurantDetails = async(mallid)=>{
 }
 
 export const getmenuitems = async(restaurantid)=>{
-  const response = await axios.get("http://localhost:8080/menuitems",{
+  const response = await axios.get("http://localhost:9090/menuitems",{
     params:{restaurantid:restaurantid}
   });
   console.log(response.data);

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const submitUserData = async(data)=>{
-    const response = await axios.post("http://localhost:8080/postUserData",data);
+    const response = await axios.post("https://eatezybackend.onrender.com/postUserData",data);
     console.log(response)
     return response.data
 }
@@ -9,7 +9,7 @@ export const submitUserData = async(data)=>{
 export const getUserData = async(emailid,userpassword)=>{
   console.log(emailid,userpassword)
     try {
-        const response = await axios.get("http://localhost:8080/getUserData", {
+        const response = await axios.get("http://localhost:9090/getUserData", {
         params:{emailid:emailid,userpassword:userpassword}});
         console.log(response);
         return response.data;
