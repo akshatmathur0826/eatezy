@@ -58,7 +58,7 @@ export const getRestarurantDetails = async(mallid)=>{
 }
 
 export const getmenuitems = async(restaurantid)=>{
-  const response = await axios.get("http://localhost:9090/menuitems",{
+  const response = await axios.get("https://eatezy.onrender.com/menuitems",{
     params:{restaurantid:restaurantid}
   });
   console.log(response.data);

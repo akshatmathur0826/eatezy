@@ -9,7 +9,7 @@ export const submitUserData = async(data)=>{
 export const getUserData = async(emailid,userpassword)=>{
   console.log(emailid,userpassword)
     try {
-        const response = await axios.get("http://localhost:9090/getUserData", {
+        const response = await axios.get("https://eatezy.onrender.com/getUserData", {
         params:{emailid:emailid,userpassword:userpassword}});
         console.log(response);
         return response.data;
