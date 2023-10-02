@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const submitUserData = async(data)=>{
-    const response = await axios.post("https://eatezybackend.onrender.com/postUserData",data);
+    const response = await axios.post("https://eatezy.onrender.com/postUserData",data);
     console.log(response)
     return response.data
 }
