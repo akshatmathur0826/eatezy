@@ -33,7 +33,7 @@ const Login = ({onClose,callBackEvent}) => {
     //let obj = {}
     // obj['emailid'] = emailid
     // obj['userpassword'] = userpassword
-    // console.log(obj)
+    // //console.log(obj)
     getUserData(emailid,userpassword).then((data)=>{
       if(data !== 'Invalid EmailID or Passcode')
       {
@@ -64,7 +64,7 @@ const Login = ({onClose,callBackEvent}) => {
   }
 
   const gotDataFromSignUpPage = (data) => {
-    console.log(data)
+    //console.log(data)
     //localStorage.setItem('user', JSON.stringify(data))
     setCookie('user',JSON.stringify(data))
     setSwitchtoSignUpModal(false)

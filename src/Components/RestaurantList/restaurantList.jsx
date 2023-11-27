@@ -31,10 +31,10 @@ const RestaurnatList = () => {
     useMemo(() => {
         let mallid;
         getAllDetails(mall, location).then((malldata) => {
-            console.log(malldata);
+            //console.log(malldata);
             if (malldata.results.length>0) {
                 mallid = malldata.results[0].fsq_id;
-                console.log(mallid);
+                //console.log(mallid);
                 fetchRestaurantData(mallid);
             }
             else{
@@ -46,17 +46,17 @@ const RestaurnatList = () => {
     }, [mall, location]);
 
     const fetchRestaurantData = async (mallid) => {
-        console.log(mallid)
+        //console.log(mallid)
         const [restodata, image] = await Promise.all([getRestarurantDetails(mallid), getImage(mallid)])
         setrestaurantDetails(restodata)
         setimg(image)
     }
 
     const showfoodOptions = (restaurantids) => {
-        //console.log(restaurantids)
+        ////console.log(restaurantids)
 
         getmenuitems(restaurantids).then((menudata) => {
-            console.log(menudata)
+            //console.log(menudata)
             setMenuItems(menudata)
             setRestaunrantid(restaurantids)
             setFoodListPopUp(true)

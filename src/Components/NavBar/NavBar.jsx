@@ -24,7 +24,7 @@ const NavBar = () => {
     const navigate = useNavigate();
     const [cookies, setCookie, removeCookie] = useCookies(["user"]);
 
-    console.log(cookies)
+    //console.log(cookies)
     const ref = useRef();
     const [isOpen, setIsOpen] = useState(false);
 
@@ -50,10 +50,10 @@ const NavBar = () => {
 
     const showListofMall = (e) => {
         if (e.keyCode === 13 && location!=='') {
-            console.log((`/${location}/${mall}`))
+            //console.log((`/${location}/${mall}`))
             navigate(`/${location}/${mall}`)
-            console.log(location)
-            console.log(mall)
+            //console.log(location)
+            //console.log(mall)
             setLocation("")
             setMall("")
         }
@@ -65,7 +65,7 @@ const NavBar = () => {
     };
 
     const gotDataFromLoginPage = (data) => {
-        console.log(data)
+        //console.log(data)
         //localStorage.setItem('user', JSON.stringify(data))
         setCookie('user',JSON.stringify(data))
         //setUserData(data)
@@ -86,7 +86,7 @@ const NavBar = () => {
 
     const viewPreviousOrders = () =>{
         viewPreviousOrderDetails(cookies.user.emailid).then((data)=>{
-            console.log(data)
+            //console.log(data)
             navigate('/orderhistory',{state:data})
         })
     }

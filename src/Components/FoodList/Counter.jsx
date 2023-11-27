@@ -27,7 +27,7 @@ const valueStyle = {
 };
 
 const Counter = ({ item }) => {
-  console.log(item)
+  //console.log(item)
   const { state, dispatch } = useCart();
   const cartItem = state.cartItems.find((cartItem) => cartItem.foodid === item.foodid);
   const quantityInCart = cartItem ? cartItem.quantity : 0;
@@ -42,7 +42,7 @@ const Counter = ({ item }) => {
       setCount(parseInt(storedCount, 0));
     }
   }, [item.foodid]);
-console.log(ref)
+//console.log(ref)
   // Use useMemo to memoize the component
   const updateCount = (newCount) => {
    

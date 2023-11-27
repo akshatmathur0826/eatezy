@@ -8,12 +8,12 @@ function CartData() {
     const { state } = useCart(); // Access cart state
     const navigate = useNavigate()
     const [cartLength, setCartLength] = useState(0)
-    console.log(state)
+    //console.log(state)
 
     useEffect(()=>{
       let cartCount = localStorage.getItem('cartCount')
-      console.log(state.cartItems)//?.restaurantdetails?.restaurantid)
-      console.log(cartCount)
+      //console.log(state.cartItems)//?.restaurantdetails?.restaurantid)
+      //console.log(cartCount)
       if(cartCount===null)
       {
         setCartLength(0)
@@ -21,7 +21,7 @@ function CartData() {
       else{
       setCartLength(cartCount)
       }
-      // console.log(cartCount)
+      // //console.log(cartCount)
       // cartCount = JSON.parse(cartCount)
       // cartCount = cartCount.length
       //return cartCount
@@ -29,7 +29,7 @@ function CartData() {
       //const count = localStorage.getItem('CartData')
       //if(count!== null)
      
-  },[state.cartItems])
+  },[state.cartItems,cartLength])
 
     const showCartPage = () =>{
         if(localStorage.getItem('cartCount')===0 || localStorage.getItem('cartCount')===null || localStorage.getItem('cartCount')==='0' )

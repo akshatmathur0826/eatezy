@@ -1,55 +1,55 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './ProgressBar.css'; // Import your CSS file for styling
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // You can use FontAwesome icons for visual representation
+import { faBell, faSpinner, faCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 const ProgressBar = ({ initialStatus }) => {
+  //console.log(initialStatus)
   const [status, setStatus] = useState(initialStatus);
+  //console.log(status)
 
   useEffect(() => {
-    // Simulate progress updates with setTimeout
-    const simulateProgress = () => {
-      setTimeout(() => {
-        switch (status.toLowerCase()) {
-          case 'accepted':
-            setStatus('In Progress');
-            break;
-          case 'in progress':
-            setStatus('Ready');
-            break;
-          case 'ready':
-            // Order is ready; no further progress
-            break;
-          default:
-            setStatus('Unknown Status');
-            break;
-        }
-      }, 3000); // Simulate a 3-second delay for status updates
-    };
 
-    simulateProgress();
-  }, [status]);
+    //console.log(status.toLowerCase())
+    switch (initialStatus.toLowerCase()) {
+
+      case 'accepted':
+        setStatus('accepted');
+        break;
+      case 'in-progress':
+        setStatus('in-progress');
+        break;
+      case 'ready for pickup':
+        setStatus('ready')
+        break;
+      default:
+        setStatus('waitingtoaccept');
+        break;
+    }
+
+  }, [initialStatus]);
 
   const getStatusText = () => {
     switch (status.toLowerCase()) {
       case 'accepted':
         return 'Order Accepted';
-      case 'in progress':
+      case 'in-progress':
         return 'Order in Progress';
       case 'ready':
         return 'Order Ready for Pickup';
       default:
-        return 'Unknown Status';
+        return 'Waiting to Accept';
     }
   };
 
   const getStatusIcon = () => {
     switch (status.toLowerCase()) {
       case 'accepted':
-        return <FontAwesomeIcon icon="check-circle" className="status-icon" />;
-      case 'in progress':
-        return <FontAwesomeIcon icon="spinner" className="status-icon" spin />;
+        return <FontAwesomeIcon icon={faCircleCheck} className="status-icon" />
+      case 'in-progress':
+        return <FontAwesomeIcon icon={faSpinner} spin className="status-icon" />;
       case 'ready':
-        return <FontAwesomeIcon icon="bell" className="status-icon" />;
+        return <FontAwesomeIcon icon={faBell} className="status-icon" />;
       default:
         return null;
     }
@@ -57,8 +57,10 @@ const ProgressBar = ({ initialStatus }) => {
 
   return (
     <div className="progress-bar">
+      
       <div className={`status-indicator ${status.toLowerCase()}`}>
         {getStatusIcon()} {getStatusText()}
+
       </div>
     </div>
   );

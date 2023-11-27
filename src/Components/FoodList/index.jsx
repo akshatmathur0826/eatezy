@@ -30,7 +30,7 @@ const FoodList = (props) => {
   // Function to add an item to the cart
   const addToCart = (item) => {
     dispatch({ type: 'ADD_TO_CART', payload: item });
-    console.log('Added to cart:', item);
+    //console.log('Added to cart:', item);
   };
 
   // Function to remove an item from the cart

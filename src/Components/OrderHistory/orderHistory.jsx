@@ -5,19 +5,17 @@ import '../OrderHistory/orderHistory.css'
 
 export const OrderHistory = () =>{
     const orderhistorydata = useLocation()
-    console.log(orderhistorydata.state)
-    orderhistorydata.state.map((data)=>{
-        console.log(data.restaurantdetails)
-    })
+    //console.log(orderhistorydata.state)
+    
     return(
     <>
     <NavBar/>
     <div className="container-3">
         <h4 className="heading-3">Order History</h4>
         <hr />
-        {orderhistorydata ? (
+        {orderhistorydata !== null ? (
           <div>
-            {orderhistorydata.state.map((data, index) => (
+            {orderhistorydata?.state?.map((data, index) => (
               <div key={index} className="orderItem">
                 <div className="orderInfo">
                   <span>Order ID:</span>

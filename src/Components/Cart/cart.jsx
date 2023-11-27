@@ -10,8 +10,8 @@ const initialState = {
 };
 
 const cartReducer = (state, action) => {
-  console.log(state,action)
-  console.log(action.type)
+  //console.log(state,action)
+  //console.log(action.type)
   switch (action.type) {
     case 'ADD_TO_CART':
       let existingItemIndex = 0;
@@ -22,6 +22,8 @@ const cartReducer = (state, action) => {
           (item) => item.foodid === action.payload.foodid
         );
         updatedCart = [...state.cartItems];
+        //console.log("....")
+        //console.log(updatedCart)
       }
       else{
         existingItemIndex = JSON.parse(localStorage.getItem('mallData')).findIndex(
@@ -29,13 +31,13 @@ const cartReducer = (state, action) => {
           updatedCart = [...JSON.parse(localStorage.getItem('mallData'))]
       }
       
-        console.log(existingItemIndex)
+        //console.log(existingItemIndex)
       if (existingItemIndex !== -1) {
         //const 
-        console.log(updatedCart)
+        //console.log(updatedCart)
         updatedCart[existingItemIndex].quantity += 1;
         updatedCart[existingItemIndex].price = updatedCart[existingItemIndex].quantity*updatedCart[existingItemIndex].foodcost
-        console.log(updatedCart)
+        //console.log(updatedCart)
         const updatedCartCount = parseInt(localStorage.getItem('cartCount'),0)+ 1;
         localStorage.setItem('cartCount', updatedCartCount.toString());
         localStorage.setItem('mallData', JSON.stringify(updatedCart));
@@ -50,7 +52,7 @@ const cartReducer = (state, action) => {
 
     case 'REMOVE_FROM_CART':
       let existingItemInCart = 0
-        console.log(existingItemInCart)
+        //console.log(existingItemInCart)
         let updatedCart1 = []
         if(localStorage.getItem('mallData')===null)
         {
@@ -68,7 +70,7 @@ const cartReducer = (state, action) => {
         //const updatedCart1 = [...state.cartItems];
         updatedCart1[existingItemInCart].price = updatedCart1[existingItemInCart].foodcost*(updatedCart1[existingItemInCart].quantity-1)
         updatedCart1[existingItemInCart].quantity -= 1;
-        console.log(updatedCart1[existingItemInCart].quantity)
+        //console.log(updatedCart1[existingItemInCart].quantity)
         if(updatedCart1[existingItemInCart].quantity>0){
           const updatedCartCount = state.cartCount - 1;
           localStorage.setItem('cartCount', updatedCartCount.toString());
@@ -82,14 +84,11 @@ const cartReducer = (state, action) => {
         localStorage.setItem('mallData', JSON.stringify(updatedCart1));
         return { ...state, cartItems: updatedCart1,cartCount:updatedCartCount };
       }
-      // case'USER_LOGGED_IN':
-      // {
-      //   if(localStorage.getItem('user')!==null)
-      //   {
-      //     state.userlogin = true
-      //   }
-      //   return {...state,userlogin:true}
-      // }
+      case'EMPTY_CART':
+      {
+        state.cartItems = []
+        return {...state,cartCount:0}
+      }
     default:
       return state;
   }

@@ -14,7 +14,7 @@ const Signup = ({ onClose, callBackEvent }) => {
   const [userpassword, setUserPassword] = useState(null)
   const [errorMessage, setErrorMessage] = useState('')
 
-  console.log(onClose)
+  //console.log(onClose)
   
   const closeModal = () => {
     onClose()
@@ -34,7 +34,7 @@ const Signup = ({ onClose, callBackEvent }) => {
     obj['fullname'] = fullname
     obj['emailid'] = emailid
     obj['userpassword'] = userpassword
-    console.log(obj)
+    //console.log(obj)
     submitUserData(obj).then((data) => {
       if (data === 'Success') {
         getUserDetails(emailid, userpassword)
@@ -53,7 +53,7 @@ const Signup = ({ onClose, callBackEvent }) => {
       setEmailId(null)
       setFullName(null)
       setUserPassword(null)
-      console.log(callBackEvent)
+      //console.log(callBackEvent)
       callBackEvent(data)
     })
   }
