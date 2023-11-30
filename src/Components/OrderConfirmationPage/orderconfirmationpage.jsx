@@ -23,8 +23,13 @@ function OrderConfirmation() {
   //const data = useLocation();
   ////console.log(data.state)
   ////console.log(state)
-  console.count()
-  const socket = io("http://localhost:4009");
+  //console.count()
+
+  const baseURL = process.env.NODE_ENV === "production"
+  ? "https://eatezyrestouser.onrender.com"
+  : "http://localhost:4009";
+
+  const socket = io(baseURL);
 
 
 
