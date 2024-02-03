@@ -1,7 +1,10 @@
 /* Base styles for larger screens */
-body{
-    max-width:fit-content;
+body {
+    background-color: rgba(245, 245, 220, 0.5);
+    padding: 0;
+    margin: 0;
 }
+
 .mall {
     outline: none;
     border: none;
@@ -40,60 +43,61 @@ h1 {
     margin-right: 2%;
 }
 
-.sec-1 {
-    display: flex;
-    justify-content: center;
+
+
+.sec-2 {
+    max-width: auto;
+    margin: 2.5% 1.5% 2.5% 1.5%;
+    display: grid;
+    grid-column-gap: 8rem;
+    grid-row-gap: 3rem;
+    /* grid-column:  1 / span 2; */
+    grid-template-columns: repeat(auto-fill, minmax(15%, 1fr));
 }
 
-.box {
-    position: relative;
-    width: 20%;
-    margin: 0.5% 4% 0% 1.5%;
+.box-2 {
+    
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 10%;
     box-shadow: 0 1px 2px gray;
     background-color: rgb(243, 240, 240);
     cursor: pointer;
+    max-width: 100%;
 }
 
-.box img {
+.box-2 img {
     width: 100%;
-    border-radius: 15px;
-    z-index: -1;
+    max-width: 100%;
+    height: 175px;
+    border-radius: 10px 10px 0 0;
 }
 
-.white {
-    position: absolute;
-    bottom: 3px;
-    align-items: center;
-    border-radius: 0 0 15px 15px;
+.white-2 {
+    /* position: absolute; */
+    bottom: 0;
+    left: 0;
+    right: 0;
     background-color: white;
-    width: 100%;
-    height: 25%;
-}
-
-.white span {
+    padding: 5px;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1em;
-    color: rgb(56, 56, 56);
-    letter-spacing: 0.7px;
+    border-radius: 0 0 10px 10px;
 }
 
-.sectionHeader {
-    /* padding: 0% 10% 10% 10%; */
+.white-2 span {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: xx-large;
-    font-weight: lighter;
-    
+    font-size: 80%;
+    color: rgb(56, 56, 56);
+    padding: 0.5% 1.5% 0.5% 1%;
 }
-body{
+
+/* body{
     overflow-x: hidden;
     padding: 0px;
     margin: 0px;
-}
+} */
 
 /* Add responsive styles for mobile screens */
+/* 
 @media (max-width: 768px) {
     .header {
         height: 50vh;
@@ -129,4 +133,4 @@ body{
     h1 {
         font-size: large;
     }
-}
+} */

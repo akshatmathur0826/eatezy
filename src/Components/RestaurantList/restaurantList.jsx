@@ -74,7 +74,8 @@ const RestaurnatList = () => {
                 <section className="sec-2" >
 
                     {
-                        restaurantDetails ? (
+                        restaurantDetails ? 
+                        (
                             restaurantDetails.map((data, index) => (
                                 <div className="box-2" key={index} onClick={() => showfoodOptions(data.restaurantid)}>
                                     <div className="white-2">
@@ -83,12 +84,9 @@ const RestaurnatList = () => {
                                             style={{
                                                 backgroundColor: getRatingBackgroundColor(data.restaurantrating),
                                                 color: "white",
-                                                padding: "3px 8px",
-                                                borderRadius: "15px",
-                                                position: "absolute",
-                                                left: "80%",
-                                                top: "5%",
-                                            }}
+                                                padding: "1.5% 2.5%",
+                                                borderRadius: "100%",
+                                                }}
                                         >
                                             {data.restaurantrating}
                                         </span>

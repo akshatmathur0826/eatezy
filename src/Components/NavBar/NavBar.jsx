@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 // import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CartData from "../Cart/CartData";
 import '../NavBar/navBar.css'
-import {useCookies} from "react-cookie";
+import { useCookies } from "react-cookie";
 import { viewPreviousOrderDetails } from "../OrderConfirmationPage/orderConfirmationPageService";
 
 //fsq3IxfT8xdGzNrSC9gU/queQufDMGqQxMS9VCCWobyTuRg=
@@ -49,7 +49,7 @@ const NavBar = () => {
     }
 
     const showListofMall = (e) => {
-        if (e.keyCode === 13 && location!=='') {
+        if (e.keyCode === 13 && location !== '') {
             //console.log((`/${location}/${mall}`))
             navigate(`/${location}/${mall}`)
             //console.log(location)
@@ -57,7 +57,7 @@ const NavBar = () => {
             setLocation("")
             setMall("")
         }
-        else if(e.keyCode === 13 && location === ''){
+        else if (e.keyCode === 13 && location === '') {
             alert('Plz enter the location')
         }
 
@@ -67,7 +67,7 @@ const NavBar = () => {
     const gotDataFromLoginPage = (data) => {
         //console.log(data)
         //localStorage.setItem('user', JSON.stringify(data))
-        setCookie('user',JSON.stringify(data))
+        setCookie('user', JSON.stringify(data))
         //setUserData(data)
         setLogin(true)
     }
@@ -84,10 +84,10 @@ const NavBar = () => {
         //setUserData([]);
     }
 
-    const viewPreviousOrders = () =>{
-        viewPreviousOrderDetails(cookies.user.emailid).then((data)=>{
+    const viewPreviousOrders = () => {
+        viewPreviousOrderDetails(cookies.user.emailid).then((data) => {
             //console.log(data)
-            navigate('/orderhistory',{state:data})
+            navigate('/orderhistory', { state: data })
         })
     }
 
@@ -96,7 +96,12 @@ const NavBar = () => {
 
 
         <header>
+            
             <div className="nav">
+            <div className="header-image">
+                <img src="https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png" alt="" 
+                />
+            </div>
                 <div>
                     <h1 style={{ cursor: 'pointer' }} onClick={backtoHomePage}>EatEzy</h1>
                 </div>
@@ -109,7 +114,7 @@ const NavBar = () => {
                                     {cookies.user.fullname} ▼
                                     <div className="dropdown-content">
                                         <button onClick={viewPreviousOrders}>Order History</button>
-                                        <hr/>
+                                        <hr />
                                         <button onClick={handleLogout}>Logout</button>
                                     </div>
                                 </div>
@@ -141,10 +146,7 @@ const NavBar = () => {
                     {/* <Link to={`${location}/${mall}`}></Link> */}
                 </div>
             </form>
-            <div className="header-image">
-                <img src="https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png" alt="" />
-
-            </div>
+            
         </header>
 
 
